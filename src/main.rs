@@ -1,5 +1,6 @@
 #[macro_use] extern crate rocket;
 use serde::{Serialize,Deserialize};
+use rocket::log::{info_, private::info};
 
 extern crate service;
 use service::AuthService;
@@ -25,6 +26,7 @@ impl ToString for Entity {
 
 #[get("/")]
 fn get_entity() -> String {
+    info!("Yo this is a logger");
     let en:Entity = Entity{
         name:"masud karim".to_string(),
         age:23,
@@ -36,5 +38,5 @@ fn get_entity() -> String {
 
 #[launch]
 fn rocket() -> _ {
-        rocket::build().mount("/hello", routes![hello,getEntity])
+        rocket::build().mount("/hello", routes![hello,get_entity])
 }
