@@ -6,8 +6,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-service = {path = "service"}
-dao = {path = "dao"}
+service = {path = "service"} # local lib (user_defined)
+dao = {path = "dao"} # local lib (user_defined)
+controller = {path = "controller"} # local lib (user_defined)
+
 
 rocket = "0.5.0-rc.1"
 serde = { version = "1.0.126", features = ["derive"] }

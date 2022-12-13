@@ -19,17 +19,17 @@ pub enum db_type {
 // implementing the display trait for the `db_type` enum
 impl Display for db_type {
     fn fmt(&self, f: &mut Formatter<'_>) -> Result<(), Error> {
-        match self.db_type {
+        match self {
             db_type::MYSQL => {
-                println!("MYSQL".to_string());
+                println!("MYSQL");
                 Result::Ok(())
             },
             db_type::POSTGRES => {
-                println!("POSTGRES".to_string());
+                println!("POSTGRES");
                 Result::Ok(())
             },
             db_type::MONGO => {
-                println!("MONGO".to_string());
+                println!("MONGO");
                 Result::Ok(())
             }
         }
